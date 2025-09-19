@@ -1,1 +1,3 @@
-# SRS Document Generator
+"""
+SRS Document Generator package
+"""
