@@ -2,7 +2,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Google Cloud SDK
+- **Backend**: Google ADK
 - **Database**: Google Cloud Firestore
 - **Testing**: pytest, pytest-cov
 - **Code Quality**: flake8, black
@@ -19,10 +19,3 @@
 ├── requirements.txt          # All dependencies
 └── pyproject.toml           # All configurations (pytest, flake8, black)
 ```
-
-## 🔐 Secrets Required
-
-Configure these secrets in GitHub repository settings:
-
-- `GCP_SA_KEY`: Google Cloud service account key (JSON)
-- `GCP_PROJECT_ID`: Google Cloud project ID
