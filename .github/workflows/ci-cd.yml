@@ -52,7 +52,11 @@ jobs:
     name: 🚀 Deploy to Cloud Run
     runs-on: ubuntu-latest
     needs: [backend]
-    if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
+    if: |
+      github.ref == 'refs/heads/develop' || 
+      github.ref == 'refs/heads/main' ||
+      (github.event_name == 'pull_request' && github.base_ref == 'develop') ||
+      (github.event_name == 'pull_request' && github.base_ref == 'main')
     timeout-minutes: 5
     
     steps:
