@@ -63,6 +63,15 @@ jobs:
       - name: 🛎️ Checkout code
         uses: actions/checkout@v4
       
+      - name: Debug secrets
+        run: |
+          echo "GCP_SA_KEY length: ${#GCP_SA_KEY}"
+          echo "GCP_PROJECT_ID: $GCP_PROJECT_ID"
+          echo "First 50 chars of GCP_SA_KEY: ${GCP_SA_KEY:0:50}"
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
