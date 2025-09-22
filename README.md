@@ -26,6 +26,7 @@
 └── .dockerignore            # Docker ignore file
 ```
 
+
 ### **Manual Deploy**
 ```bash
 # Build locally
