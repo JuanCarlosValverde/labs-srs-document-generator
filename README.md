@@ -28,6 +28,7 @@
 
 
 ### **Manual Deploy**
+
 ```bash
 # Build locally
 docker build -t srs-document-generator .
