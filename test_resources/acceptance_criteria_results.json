@@ -1,0 +1,142 @@
+{
+  "rent_roll_units": {
+    "count": 377,
+    "meets_criteria": true,
+    "file": "rent_roll_multifamily_ascii.csv"
+  },
+  "comparables_properties": {
+    "count": 46,
+    "meets_criteria": true,
+    "file": "comparables_multifamily.csv"
+  },
+  "operating_expenses": {
+    "count": 247,
+    "categories": [
+      "Administrative",
+      "Marketing",
+      "Cleaning",
+      "Property Management",
+      "Landscaping",
+      "Contractor Services",
+      "Legal & Professional",
+      "Permits",
+      "Insurance",
+      "Utilities",
+      "Repairs",
+      "Taxes",
+      "Maintenance",
+      "Equipment",
+      "Security",
+      "Supplies"
+    ],
+    "meets_criteria": true,
+    "file": "operating_expenses_multifamily.csv"
+  },
+  "tenant_roster": {
+    "count": 166,
+    "has_demographics": true,
+    "meets_criteria": true,
+    "file": "tenant_roster_multifamily.csv"
+  },
+  "noi_data": {
+    "count": 49,
+    "years_covered": 3.9425051334702257,
+    "meets_criteria": true,
+    "file": "noi_data_multifamily.csv"
+  },
+  "market_analysis": {
+    "count": 14,
+    "has_statistics": true,
+    "meets_criteria": true,
+    "file": "market_analysis_multifamily.csv"
+  },
+  "edge_cases": {
+    "has_empty_cells": true,
+    "has_special_chars": false,
+    "has_large_numbers": false,
+    "meets_criteria": true,
+    "file": "rent_roll_multifamily_ascii.csv"
+  },
+  "error_files": {
+    "count": 0,
+    "meets_criteria": false,
+    "files": []
+  },
+  "multiple_formats": {
+    "csv_count": 30,
+    "xls_count": 0,
+    "xlsx_count": 0,
+    "meets_criteria": true,
+    "files": {
+      "csv": 30,
+      "xls": 0,
+      "xlsx": 0
+    }
+  },
+  "data_dictionary": {
+    "count": 6,
+    "meets_criteria": true,
+    "files": [
+      "comparables_fields.csv",
+      "market_analysis_fields.csv",
+      "noi_fields.csv",
+      "operating_expenses_fields.csv",
+      "rent_roll_fields.csv",
+      "tenant_roster_fields.csv"
+    ]
+  },
+  "encodings": {
+    "utf8_count": 3,
+    "ascii_count": 3,
+    "utf16_count": 3,
+    "meets_criteria": true,
+    "files": {
+      "utf8": 3,
+      "ascii": 3,
+      "utf16": 3
+    }
+  },
+  "reproducible_script": {
+    "count": 2,
+    "meets_criteria": true,
+    "files": [
+      "generate_csv_data.py",
+      "generate_test_data.py"
+    ]
+  },
+  "property_types": {
+    "covered_types": [
+      "multifamily",
+      "office",
+      "retail"
+    ],
+    "meets_criteria": true,
+    "files_per_type": {
+      "multifamily": 5,
+      "office": 5,
+      "retail": 5
+    }
+  },
+  "financial_calculations": {
+    "realistic": true,
+    "meets_criteria": true,
+    "file": "comparables_multifamily.csv"
+  },
+  "file_storage": {
+    "total_files": 26,
+    "directory": "test_resources",
+    "meets_criteria": true,
+    "files": [
+      "comparables_multifamily.csv",
+      "comparables_office.csv",
+      "comparables_retail.csv",
+      "generation_summary.json",
+      "market_analysis_multifamily.csv",
+      "market_analysis_office.csv",
+      "market_analysis_retail.csv",
+      "noi_data_multifamily.csv",
+      "noi_data_office.csv",
+      "noi_data_retail.csv"
+    ]
+  }
+}

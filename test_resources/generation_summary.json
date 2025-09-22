@@ -1,0 +1,22 @@
+{
+  "generation_date": "2025-09-22",
+  "total_files_generated": 30,
+  "files_by_type": {
+    "rent_roll": 10,
+    "comparables": 4,
+    "operating_expenses": 4,
+    "tenant_roster": 4,
+    "noi_data": 3,
+    "market_analysis": 4
+  },
+  "files_by_property_type": {
+    "multifamily": 8,
+    "office": 8,
+    "retail": 8
+  },
+  "files_by_encoding": {
+    "utf-8": 3,
+    "ascii": 3,
+    "utf-16": 3
+  }
+}

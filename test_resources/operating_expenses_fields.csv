@@ -1,0 +1,14 @@
+field_name,description
+expense_id,Unique identifier for the expense
+category,"Expense category (e.g., Maintenance, Utilities, Insurance)"
+subcategory,Subcategory within the main category
+description,Detailed description of the expense
+amount,Expense amount
+period_start,Start date of the expense period
+period_end,End date of the expense period
+vendor,Vendor or service provider
+invoice_number,Invoice or reference number
+payment_date,Date when payment was made
+payment_method,Method of payment
+recurring,Whether this is a recurring expense
+notes,Additional notes
