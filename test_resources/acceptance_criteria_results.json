@@ -12,22 +12,22 @@
   "operating_expenses": {
     "count": 247,
     "categories": [
-      "Administrative",
-      "Marketing",
-      "Cleaning",
       "Property Management",
-      "Landscaping",
+      "Permits",
+      "Marketing",
+      "Supplies",
       "Contractor Services",
       "Legal & Professional",
-      "Permits",
-      "Insurance",
-      "Utilities",
-      "Repairs",
       "Taxes",
+      "Cleaning",
+      "Utilities",
+      "Landscaping",
       "Maintenance",
       "Equipment",
       "Security",
-      "Supplies"
+      "Insurance",
+      "Repairs",
+      "Administrative"
     ],
     "meets_criteria": true,
     "file": "operating_expenses_multifamily.csv"
@@ -123,10 +123,11 @@
     "file": "comparables_multifamily.csv"
   },
   "file_storage": {
-    "total_files": 26,
+    "total_files": 27,
     "directory": "test_resources",
     "meets_criteria": true,
     "files": [
+      "acceptance_criteria_results.json",
       "comparables_multifamily.csv",
       "comparables_office.csv",
       "comparables_retail.csv",
@@ -135,8 +136,7 @@
       "market_analysis_office.csv",
       "market_analysis_retail.csv",
       "noi_data_multifamily.csv",
-      "noi_data_office.csv",
-      "noi_data_retail.csv"
+      "noi_data_office.csv"
     ]
   }
 }
