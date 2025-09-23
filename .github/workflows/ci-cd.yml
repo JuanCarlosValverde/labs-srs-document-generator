@@ -57,7 +57,7 @@ jobs:
       github.ref == 'refs/heads/main' ||
        (github.event_name == 'pull_request' && github.base_ref == 'develop') ||
        (github.event_name == 'pull_request' && github.base_ref == 'main')
-     timeout-minutes: 5
+      timeout-minutes: 5
     
     steps:
       - name: 🛎️ Checkout code
