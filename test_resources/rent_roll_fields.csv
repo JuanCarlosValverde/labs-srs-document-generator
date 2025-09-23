@@ -1,0 +1,17 @@
+field_name,description
+unit_id,Unique identifier for the unit
+unit_number,Unit number or identifier
+floor,Floor number where the unit is located
+bedrooms,Number of bedrooms in the unit
+bathrooms,Number of bathrooms (can be fractional)
+square_footage,Total square footage of the unit
+rent_amount,Monthly rent amount
+lease_start_date,Start date of the current lease
+lease_end_date,End date of the current lease
+lease_status,"Current status of the lease (occupied, vacant, pending, not_available)"
+tenant_name,Name of the current tenant
+security_deposit,Security deposit amount
+pet_deposit,Pet deposit amount if applicable
+parking_spaces,Number of parking spaces assigned to the unit
+amenities,List of amenities included with the unit
+notes,Additional notes about the unit

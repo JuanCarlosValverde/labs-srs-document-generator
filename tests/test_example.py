@@ -1,6 +1,7 @@
 """
 Example test file for the SRS Document Generator
 """
+
 from src.main import hello_world
 
 

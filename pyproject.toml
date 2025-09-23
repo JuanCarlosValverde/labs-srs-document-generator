@@ -23,7 +23,8 @@ exclude = [
     ".mypy_cache",
     "build",
     "dist",
-    "migrations"
+    "migrations",
+    "test_resources"
 ]
 per-file-ignores = [
     "__init__.py:F401"
@@ -42,5 +43,6 @@ extend-exclude = '''
   | \.mypy_cache
   | build
   | dist
+  | test_resources
 )/
 '''

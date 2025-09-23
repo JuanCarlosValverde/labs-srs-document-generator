@@ -1,0 +1,11 @@
+field_name,description
+period_start,Start date of the period
+period_end,End date of the period
+gross_rental_income,Total gross rental income
+other_income,Other income sources
+total_income,Total income
+operating_expenses,Total operating expenses
+net_operating_income,Net Operating Income
+occupancy_rate,Occupancy rate percentage
+avg_rent_per_sqft,Average rent per square foot
+notes,Additional notes

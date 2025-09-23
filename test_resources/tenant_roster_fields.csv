@@ -1,0 +1,21 @@
+field_name,description
+tenant_id,Unique identifier for the tenant
+tenant_name,Name of the tenant
+unit_id,Unit identifier
+lease_start_date,Start date of the lease
+lease_end_date,End date of the lease
+monthly_rent,Monthly rent amount
+security_deposit,Security deposit amount
+pet_deposit,Pet deposit amount if applicable
+tenant_type,"Type of tenant (residential, commercial, retail, office)"
+age_range,Age range of the tenant
+household_size,Number of people in the household
+income_range,Income range of the tenant
+employment_status,Employment status
+credit_score_range,Credit score range
+move_in_date,Actual move-in date
+move_out_date,Move-out date if applicable
+lease_renewals,Number of lease renewals
+payment_history,Payment history data
+emergency_contact,Emergency contact information
+notes,Additional notes

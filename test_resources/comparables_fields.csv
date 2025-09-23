@@ -1,0 +1,21 @@
+field_name,description
+property_id,Unique identifier for the comparable property
+property_name,Name of the property
+address,Street address
+city,City
+state,State
+zip_code,ZIP code
+property_type,"Type of property (multifamily, office, retail, industrial, mixed_use)"
+year_built,Year the property was built
+total_units,Total number of units
+total_sqft,Total square footage
+sale_price,Sale price of the property
+sale_date,Date of sale
+price_per_sqft,Sale price per square foot
+price_per_unit,Sale price per unit
+cap_rate,Capitalization rate
+noi,Net Operating Income
+occupancy_rate,Occupancy rate percentage
+avg_rent_per_sqft,Average rent per square foot
+amenities,List of property amenities
+notes,Additional notes
