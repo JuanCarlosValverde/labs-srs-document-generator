@@ -48,20 +48,36 @@ jobs:
       - name: 🧪 Run Pytest
         run: pytest
 
-  deploy:
-    name: 🚀 Deploy to Cloud Run
-    runs-on: ubuntu-latest
-    needs: [backend]
-    if: |
-      github.ref == 'refs/heads/develop' || 
-      github.ref == 'refs/heads/main' ||
-      (github.event_name == 'pull_request' && github.base_ref == 'develop') ||
-      (github.event_name == 'pull_request' && github.base_ref == 'main')
-    timeout-minutes: 5
+  # deploy:
+  #   name: 🚀 Deploy to Cloud Run
+  #   runs-on: ubuntu-latest
+  #   needs: [backend]
+  #   if: |
+  #     github.ref == 'refs/heads/develop' || 
+  #     github.ref == 'refs/heads/main' ||
+  #     (github.event_name == 'pull_request' && github.base_ref == 'develop') ||
+  #     (github.event_name == 'pull_request' && github.base_ref == 'main')
+  #   timeout-minutes: 5
     
     steps:
       - name: 🛎️ Checkout code
         uses: actions/checkout@v4
+      
+      - name: Check if secrets are set
+        run: |
+          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
+            echo "❌ GCP_SA_KEY secret is NOT set"
+            exit 1
+          else
+            echo "✅ GCP_SA_KEY secret is available"
+          fi
+          
+          if [ -z "${{ secrets.GCP_PROJECT_ID }}" ]; then
+            echo "❌ GCP_PROJECT_ID secret is NOT set"
+            exit 1
+          else
+            echo "✅ GCP_PROJECT_ID secret is available"
+          fi
       
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
