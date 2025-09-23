@@ -62,22 +62,6 @@ jobs:
     steps:
       - name: 🛎️ Checkout code
         uses: actions/checkout@v4
-      
-      - name: Check if secrets are set
-        run: |
-          if [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
-            echo "❌ GCP_SA_KEY secret is NOT set"
-            exit 1
-          else
-            echo "✅ GCP_SA_KEY secret is available"
-          fi
-          
-          if [ -z "${{ secrets.GCP_PROJECT_ID }}" ]; then
-            echo "❌ GCP_PROJECT_ID secret is NOT set"
-            exit 1
-          else
-            echo "✅ GCP_PROJECT_ID secret is available"
-          fi
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
@@ -87,6 +71,12 @@ jobs:
       - name: Authenticate to GCP
         run: |
           echo "${{ secrets.GCP_SA_KEY }}" > "${HOME}/gcp-key.json"
+          
+          # Debug: Show the content of gcp-key.json
+          echo "=== DEBUG: Content of gcp-key.json ==="
+          cat "${HOME}/gcp-key.json"
+          echo "=== END DEBUG ==="
+          
           gcloud auth activate-service-account --key-file="${HOME}/gcp-key.json"
           gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
           
