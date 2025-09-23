@@ -12,22 +12,22 @@
   "operating_expenses": {
     "count": 247,
     "categories": [
-      "Property Management",
-      "Supplies",
-      "Repairs",
       "Security",
-      "Maintenance",
-      "Contractor Services",
-      "Legal & Professional",
       "Insurance",
-      "Utilities",
-      "Cleaning",
       "Administrative",
+      "Contractor Services",
+      "Maintenance",
+      "Supplies",
+      "Cleaning",
+      "Marketing",
       "Equipment",
+      "Permits",
       "Taxes",
       "Landscaping",
-      "Permits",
-      "Marketing"
+      "Repairs",
+      "Utilities",
+      "Legal & Professional",
+      "Property Management"
     ],
     "meets_criteria": true,
     "file": "operating_expenses_multifamily.csv"
