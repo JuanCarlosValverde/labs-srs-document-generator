@@ -12,6 +12,7 @@ from enum import Enum
 
 class PropertyType(Enum):
     """Property types supported by the system"""
+
     MULTIFAMILY = "multifamily"
     OFFICE = "office"
     RETAIL = "retail"
@@ -21,6 +22,7 @@ class PropertyType(Enum):
 
 class LeaseStatus(Enum):
     """Lease status options"""
+
     OCCUPIED = "occupied"
     VACANT = "vacant"
     PENDING = "pending"
@@ -29,6 +31,7 @@ class LeaseStatus(Enum):
 
 class TenantType(Enum):
     """Tenant type classifications"""
+
     RESIDENTIAL = "residential"
     COMMERCIAL = "commercial"
     RETAIL = "retail"
@@ -38,6 +41,7 @@ class TenantType(Enum):
 @dataclass
 class RentRollUnit:
     """Schema for rent roll unit data"""
+
     unit_id: str
     unit_number: str
     floor: Optional[int] = None
@@ -59,6 +63,7 @@ class RentRollUnit:
 @dataclass
 class ComparableProperty:
     """Schema for comparable property data"""
+
     property_id: str
     property_name: str
     address: str
@@ -84,6 +89,7 @@ class ComparableProperty:
 @dataclass
 class OperatingExpense:
     """Schema for operating expense data"""
+
     expense_id: str
     category: str
     description: str
@@ -102,6 +108,7 @@ class OperatingExpense:
 @dataclass
 class TenantInfo:
     """Schema for tenant demographic and lease data"""
+
     tenant_id: str
     tenant_name: str
     unit_id: str
@@ -127,6 +134,7 @@ class TenantInfo:
 @dataclass
 class NOIDataPoint:
     """Schema for Net Operating Income data point"""
+
     period_start: date
     period_end: date
     gross_rental_income: Decimal
@@ -142,6 +150,7 @@ class NOIDataPoint:
 @dataclass
 class MarketAnalysisData:
     """Schema for market analysis data"""
+
     market_id: str
     market_name: str
     geographic_area: str
@@ -177,7 +186,7 @@ RENT_ROLL_FIELDS = {
     "pet_deposit": "Pet deposit amount if applicable",
     "parking_spaces": "Number of parking spaces assigned to the unit",
     "amenities": "List of amenities included with the unit",
-    "notes": "Additional notes about the unit"
+    "notes": "Additional notes about the unit",
 }
 
 COMPARABLES_FIELDS = {
@@ -200,7 +209,7 @@ COMPARABLES_FIELDS = {
     "occupancy_rate": "Occupancy rate percentage",
     "avg_rent_per_sqft": "Average rent per square foot",
     "amenities": "List of property amenities",
-    "notes": "Additional notes"
+    "notes": "Additional notes",
 }
 
 OPERATING_EXPENSES_FIELDS = {
@@ -216,7 +225,7 @@ OPERATING_EXPENSES_FIELDS = {
     "payment_date": "Date when payment was made",
     "payment_method": "Method of payment",
     "recurring": "Whether this is a recurring expense",
-    "notes": "Additional notes"
+    "notes": "Additional notes",
 }
 
 TENANT_ROSTER_FIELDS = {
@@ -239,7 +248,7 @@ TENANT_ROSTER_FIELDS = {
     "lease_renewals": "Number of lease renewals",
     "payment_history": "Payment history data",
     "emergency_contact": "Emergency contact information",
-    "notes": "Additional notes"
+    "notes": "Additional notes",
 }
 
 NOI_FIELDS = {
@@ -252,7 +261,7 @@ NOI_FIELDS = {
     "net_operating_income": "Net Operating Income",
     "occupancy_rate": "Occupancy rate percentage",
     "avg_rent_per_sqft": "Average rent per square foot",
-    "notes": "Additional notes"
+    "notes": "Additional notes",
 }
 
 MARKET_ANALYSIS_FIELDS = {
@@ -271,5 +280,5 @@ MARKET_ANALYSIS_FIELDS = {
     "economic_indicators": "Economic indicators data",
     "demographics": "Demographic data",
     "competition_analysis": "Competition analysis",
-    "notes": "Additional notes"
+    "notes": "Additional notes",
 }
