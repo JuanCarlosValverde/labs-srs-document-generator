@@ -4,21 +4,17 @@ SRS Document Generator - Simplified CSV Data Generation Script
 Generates comprehensive test data for all property types in CSV format
 """
 
-print("🚀 Starting SRS Document Generator (CSV Version)...")
-
 import csv
 import json
 import random
 import sys
 from pathlib import Path
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 from decimal import Decimal, ROUND_HALF_UP
 from typing import List, Dict, Any, Optional
 
 # Add src to path for imports
 sys.path.append(str(Path(__file__).parent / "src"))
-
-print("📦 Importing modules...")
 
 from schemas import (
     PropertyType, LeaseStatus, TenantType,
@@ -26,6 +22,8 @@ from schemas import (
     TENANT_ROSTER_FIELDS, NOI_FIELDS, MARKET_ANALYSIS_FIELDS
 )
 
+print("🚀 Starting SRS Document Generator (CSV Version)...")
+print("📦 Importing modules...")
 print("✅ Modules imported successfully")
 
 
@@ -39,34 +37,37 @@ class SimpleDataGenerator:
         
         # Common data pools
         self.first_names = [
-            "John", "Jane", "Michael", "Sarah", "David", "Lisa", "Robert", "Emily",
-            "James", "Jessica", "William", "Ashley", "Richard", "Amanda", "Joseph",
-            "Jennifer", "Thomas", "Michelle", "Christopher", "Kimberly", "Charles",
-            "Donna", "Daniel", "Carol", "Matthew", "Sandra", "Anthony", "Ruth",
-            "Mark", "Sharon", "Donald", "Nancy", "Steven", "Betty", "Paul", "Helen"
+            "John", "Jane", "Michael", "Sarah", "David", "Lisa", "Robert",
+            "Emily", "James", "Jessica", "William", "Ashley", "Richard",
+            "Amanda", "Joseph", "Jennifer", "Thomas", "Michelle",
+            "Christopher", "Kimberly", "Charles", "Donna", "Daniel", "Carol",
+            "Matthew", "Sandra", "Anthony", "Ruth", "Mark", "Sharon",
+            "Donald", "Nancy", "Steven", "Betty", "Paul", "Helen"
         ]
         
         self.last_names = [
-            "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller",
-            "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez",
-            "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin",
-            "Lee", "Perez", "Thompson", "White", "Harris", "Sanchez", "Clark",
-            "Ramirez", "Lewis", "Robinson", "Walker", "Young", "Allen", "King",
-            "Wright", "Scott", "Torres", "Nguyen", "Hill", "Flores"
+            "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia",
+            "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez",
+            "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore",
+            "Jackson", "Martin", "Lee", "Perez", "Thompson", "White",
+            "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson",
+            "Walker", "Young", "Allen", "King", "Wright", "Scott", "Torres",
+            "Nguyen", "Hill", "Flores"
         ]
         
         self.cities = [
-            "New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia",
-            "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville",
-            "Fort Worth", "Columbus", "Charlotte", "San Francisco", "Indianapolis",
-            "Seattle", "Denver", "Washington", "Boston", "El Paso", "Nashville",
-            "Detroit", "Oklahoma City", "Portland", "Las Vegas", "Memphis", "Louisville"
+            "New York", "Los Angeles", "Chicago", "Houston", "Phoenix",
+            "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose",
+            "Austin", "Jacksonville", "Fort Worth", "Columbus", "Charlotte",
+            "San Francisco", "Indianapolis", "Seattle", "Denver", "Washington",
+            "Boston", "El Paso", "Nashville", "Detroit", "Oklahoma City",
+            "Portland", "Las Vegas", "Memphis", "Louisville"
         ]
         
         self.states = [
-            "NY", "CA", "IL", "TX", "AZ", "PA", "TX", "CA", "TX", "CA", "TX", "FL",
-            "TX", "OH", "NC", "CA", "IN", "WA", "CO", "DC", "MA", "TX", "TN", "MI",
-            "OK", "OR", "NV", "TN", "KY"
+            "NY", "CA", "IL", "TX", "AZ", "PA", "TX", "CA", "TX", "CA", "TX",
+            "FL", "TX", "OH", "NC", "CA", "IN", "WA", "CO", "DC", "MA", "TX",
+            "TN", "MI", "OK", "OR", "NV", "TN", "KY"
         ]
         
         self.expense_categories = [
@@ -77,19 +78,23 @@ class SimpleDataGenerator:
         ]
         
         self.vendors = [
-            "ABC Maintenance Co.", "City Utilities", "Metro Insurance", "Premier Property Management",
-            "Legal Associates", "Marketing Solutions", "Office Depot", "Quick Fix Repairs",
-            "Green Thumb Landscaping", "Secure Systems Inc.", "Clean Sweep Services",
-            "Tax Professionals", "Permit Express", "Equipment Rentals", "Supply Central",
-            "Contractor Plus", "Emergency Services", "Quality Work", "Reliable Solutions"
+            "ABC Maintenance Co.", "City Utilities", "Metro Insurance",
+            "Premier Property Management", "Legal Associates",
+            "Marketing Solutions", "Office Depot", "Quick Fix Repairs",
+            "Green Thumb Landscaping", "Secure Systems Inc.",
+            "Clean Sweep Services", "Tax Professionals", "Permit Express",
+            "Equipment Rentals", "Supply Central", "Contractor Plus",
+            "Emergency Services", "Quality Work", "Reliable Solutions"
         ]
         
         self.amenities = [
-            "Pool", "Fitness Center", "Parking Garage", "Balcony", "In-Unit Laundry",
-            "Dishwasher", "Air Conditioning", "Hardwood Floors", "Granite Countertops",
-            "Walk-in Closet", "Pet Friendly", "Garden", "Rooftop Deck", "Concierge",
-            "Package Receiving", "Bike Storage", "Storage Unit", "Patio", "Fireplace",
-            "High-Speed Internet", "Cable Ready", "Security System", "Elevator"
+            "Pool", "Fitness Center", "Parking Garage", "Balcony",
+            "In-Unit Laundry", "Dishwasher", "Air Conditioning",
+            "Hardwood Floors", "Granite Countertops", "Walk-in Closet",
+            "Pet Friendly", "Garden", "Rooftop Deck", "Concierge",
+            "Package Receiving", "Bike Storage", "Storage Unit", "Patio",
+            "Fireplace", "High-Speed Internet", "Cable Ready",
+            "Security System", "Elevator"
         ]
     
     def generate_unit_id(self, property_prefix: str = "UNIT") -> str:
@@ -118,11 +123,14 @@ class SimpleDataGenerator:
         """Generate a random street address"""
         street_numbers = [str(random.randint(100, 9999))]
         street_names = [
-            "Main St", "Oak Ave", "Pine Rd", "Cedar Blvd", "Maple Dr", "Elm St",
-            "First Ave", "Second St", "Park Ave", "Broadway", "Washington St",
-            "Lincoln Ave", "Jefferson Rd", "Madison St", "Franklin Ave"
+            "Main St", "Oak Ave", "Pine Rd", "Cedar Blvd", "Maple Dr",
+            "Elm St", "First Ave", "Second St", "Park Ave", "Broadway",
+            "Washington St", "Lincoln Ave", "Jefferson Rd", "Madison St",
+            "Franklin Ave"
         ]
-        return f"{random.choice(street_numbers)} {random.choice(street_names)}"
+        street_num = random.choice(street_numbers)
+        street_name = random.choice(street_names)
+        return f"{street_num} {street_name}"
     
     def generate_random_date(self, start_date: date, end_date: date) -> date:
         """Generate a random date between start and end dates"""
@@ -131,21 +139,26 @@ class SimpleDataGenerator:
         random_days = random.randint(0, days_between)
         return start_date + timedelta(days=random_days)
     
-    def generate_random_decimal(self, min_val: float, max_val: float, decimal_places: int = 2) -> Decimal:
+    def generate_random_decimal(self, min_val: float, max_val: float,
+                                decimal_places: int = 2) -> Decimal:
         """Generate a random decimal value"""
         value = random.uniform(min_val, max_val)
         return Decimal(str(round(value, decimal_places))).quantize(
             Decimal('0.01'), rounding=ROUND_HALF_UP
         )
     
-    def generate_rent_roll(self, num_units: int = 100, property_type: PropertyType = PropertyType.MULTIFAMILY) -> List[Dict[str, Any]]:
+    def generate_rent_roll(self, num_units: int = 100,
+                           property_type: PropertyType = 
+                           PropertyType.MULTIFAMILY) -> List[Dict[str, Any]]:
         """Generate rent roll data for specified number of units"""
         units = []
         
         for i in range(num_units):
             # Generate unit number based on property type
             if property_type == PropertyType.MULTIFAMILY:
-                unit_number = f"{random.randint(1, 20)}{random.choice(['A', 'B', 'C', 'D'])}"
+                unit_num = random.randint(1, 20)
+                unit_letter = random.choice(['A', 'B', 'C', 'D'])
+                unit_number = f"{unit_num}{unit_letter}"
                 floor = random.randint(1, 5)
                 bedrooms = random.choice([1, 2, 3, 4])
                 bathrooms = random.choice([1.0, 1.5, 2.0, 2.5, 3.0])
@@ -183,10 +196,13 @@ class SimpleDataGenerator:
                 date.today() - timedelta(days=365),
                 date.today() + timedelta(days=30)
             )
-            lease_end = lease_start + timedelta(days=random.randint(365, 1095))  # 1-3 years
+            # 1-3 years lease
+            lease_days = random.randint(365, 1095)
+            lease_end = lease_start + timedelta(days=lease_days)
             
             # Generate lease status
-            status_options = [LeaseStatus.OCCUPIED, LeaseStatus.VACANT, LeaseStatus.PENDING]
+            status_options = [LeaseStatus.OCCUPIED, LeaseStatus.VACANT,
+                             LeaseStatus.PENDING]
             weights = [0.85, 0.10, 0.05]  # Most units occupied
             lease_status = random.choices(status_options, weights=weights)[0]
             
@@ -206,11 +222,15 @@ class SimpleDataGenerator:
                 pet_deposit = self.generate_random_decimal(200, 1000)
             
             # Generate parking spaces
-            parking_spaces = random.randint(0, 2) if property_type == PropertyType.MULTIFAMILY else None
+            if property_type == PropertyType.MULTIFAMILY:
+                parking_spaces = random.randint(0, 2)
+            else:
+                parking_spaces = None
             
             # Generate amenities
             num_amenities = random.randint(0, 5)
-            unit_amenities = random.sample(self.amenities, min(num_amenities, len(self.amenities)))
+            max_amenities = min(num_amenities, len(self.amenities))
+            unit_amenities = random.sample(self.amenities, max_amenities)
             
             unit = {
                 "unit_id": self.generate_unit_id(),
@@ -227,15 +247,19 @@ class SimpleDataGenerator:
                 "security_deposit": security_deposit,
                 "pet_deposit": pet_deposit,
                 "parking_spaces": parking_spaces,
-                "amenities": ", ".join(unit_amenities) if unit_amenities else None,
-                "notes": f"Generated unit {i+1}" if random.random() < 0.1 else None
+                "amenities": (", ".join(unit_amenities) 
+                             if unit_amenities else None),
+                "notes": (f"Generated unit {i+1}" 
+                         if random.random() < 0.1 else None)
             }
             
             units.append(unit)
         
         return units
     
-    def generate_comparables(self, num_properties: int = 30, property_type: PropertyType = PropertyType.MULTIFAMILY) -> List[Dict[str, Any]]:
+    def generate_comparables(self, num_properties: int = 30,
+                             property_type: PropertyType = 
+                             PropertyType.MULTIFAMILY) -> List[Dict[str, Any]]:
         """Generate comparable properties data"""
         comparables = []
         
