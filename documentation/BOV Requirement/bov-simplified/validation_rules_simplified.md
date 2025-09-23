@@ -21,16 +21,6 @@
 - `toc_background_image`: Required, must be valid JPG/PNG file
 - All page titles and subitems: Static values, no validation needed
 
-### Pricing Summary
-- `asking_price`: Optional, must be ≥ 0
-- `net_operating_income`: Optional, must be ≥ 0
-- `cap_rate`: Optional, must be between 0-100
-- `lease_type`: Optional, must be one of {NNN, Gross, Modified}
-- `go_to_market_price`: Optional, must be ≥ 0
-- `strike_price`: Optional, must be ≥ 0
-- `value_floor`: Optional, must be ≥ 0
-- `valuation_notes`: Optional, max 1000 chars
-
 ### Broker Biography
 - `broker_name`: Required, max 100 chars
 - `broker_title`: Required, max 100 chars
@@ -62,6 +52,16 @@
 - `monthly_rent`: Required, must be ≥ 0
 - `annual_rent`: Optional, if provided must match monthly_rent * 12 (±1%)
 - `rent_type`: Required, must be one of {NNN, Gross, Modified}
+
+### Pricing Summary
+- `asking_price`: Optional, must be ≥ 0
+- `net_operating_income`: Optional, must be ≥ 0
+- `cap_rate`: Optional, must be between 0-100
+- `lease_type`: Optional, must be one of {NNN, Gross, Modified}
+- `go_to_market_price`: Optional, must be ≥ 0
+- `strike_price`: Optional, must be ≥ 0
+- `value_floor`: Optional, must be ≥ 0
+- `valuation_notes`: Optional, max 1000 chars
 
 ### Case Studies (from CSV)
 - `case_study_title`: Required, max 100 chars, default: "Case Studies"

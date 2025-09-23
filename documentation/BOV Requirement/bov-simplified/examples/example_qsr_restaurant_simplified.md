@@ -43,18 +43,12 @@ This example demonstrates the simplified BOV structure for a QSR property. Data 
 
 **Note**: All lease data (tenant info, dates, amounts, etc.) is generated automatically from CSV input.
 
-## 5. Pricing Summary
+## 5. Pricing Summary (Auto-generated)
 | Field | Value |
 |-------|-------|
-| `asking_price` | 2,250,000 |
-| `net_operating_income` | 174,000 |
-| `cap_rate` | 6.20 |
-| `lease_type` | "NNN" |
-| `value_matrix` | [{"cap_rate": 6.20, "price": 2250000}, {"cap_rate": 6.50, "price": 2150000}] |
-| `go_to_market_price` | 2,150,000 |
-| `strike_price` | 2,050,000 |
-| `value_floor` | 1,950,000 |
-| `valuation_notes` | "High-traffic location with drive-through service. Modern building with excellent visibility and access." |
+| `pricing_title` | "Pricing Summary" |
+
+**Note**: All pricing data (asking price, NOI, cap rates, value matrix, etc.) is generated from CSV input.
 
 ## 6. Case Studies Section (Auto-generated from CSV)
 | Field | Value |
@@ -84,6 +78,6 @@ This example demonstrates the simplified BOV structure for a QSR property. Data 
 
 ## Summary
 
-**Manual Input Required**: 35 fields
-**Auto-Generated from CSV**: Comparables, Rent Roll, Case Studies data
+**Manual Input Required**: 26 fields
+**Auto-Generated from CSV**: Comparables, Rent Roll, Pricing Summary, Case Studies data
 **Focus**: Section structure, titles, and key configuration fields

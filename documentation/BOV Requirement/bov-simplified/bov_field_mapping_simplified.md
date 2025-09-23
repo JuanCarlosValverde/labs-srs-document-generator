@@ -57,19 +57,13 @@ This document defines the simplified field structure for BOV templates for ADK g
 
 ---
 
-## 5. Pricing Summary
+## 5. Pricing Summary (Auto-generated from CSV)
 
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
-| asking_price         | decimal  | No       | ≥0                                            | CSV           |
-| net_operating_income | decimal  | No       | ≥0                                            | Client        |
-| cap_rate             | decimal  | No       | 0–100                                         | Client        |
-| lease_type           | enum     | No       | {NNN, Gross, Modified}                        | CSV           |
-| value_matrix         | list     | No       | Must be valid JSON (cap_rate, price pairs)    | Client        |
-| go_to_market_price   | decimal  | No       | ≥0                                            | Client        |
-| strike_price         | decimal  | No       | ≥0                                            | Client        |
-| value_floor          | decimal  | No       | ≥0                                            | Client        |
-| valuation_notes      | text     | No       | ≤1000 chars                                   | Agent         |
+| pricing_title        | string   | Yes      | Default: "Pricing Summary"                    | Static        |
+
+**Note**: All pricing data (price, NOI, cap rates, value matrix, etc.) is generated automatically from CSV input.
 
 ---
 
@@ -118,17 +112,17 @@ This document defines the simplified field structure for BOV templates for ADK g
 
 ## Summary
 
-**Total Fields**: 35 fields (vs 136 in full version)
+**Total Fields**: 26 fields (vs 136 in full version)
 
 **Auto-generated Sections**:
 - Comparables (from CSV)
-- Rent Roll (from CSV) 
+- Rent Roll (from CSV)
+- Pricing Summary (from CSV)
 - Case Studies (from CSV)
 
 **Manual Input Sections**:
 - Cover Page (8 fields)
 - Table of Contents (9 fields)
-- Pricing Summary (9 fields)
 - Broker Biography (9 fields)
 
 This simplified version focuses on the structural elements that need manual configuration, while data-heavy sections are handled automatically by the ADK system from CSV input.

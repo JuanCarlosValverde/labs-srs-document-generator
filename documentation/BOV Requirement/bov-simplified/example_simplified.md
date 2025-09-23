@@ -43,18 +43,12 @@ This example demonstrates the simplified BOV structure focusing only on manual i
 
 **Note**: All lease data is generated from CSV input.
 
-## 5. Pricing Summary
+## 5. Pricing Summary (Auto-generated)
 | Field | Value |
 |-------|-------|
-| `asking_price` | [Asking Price] |
-| `net_operating_income` | [NOI] |
-| `cap_rate` | [Cap Rate] |
-| `lease_type` | [Lease Type] |
-| `value_matrix` | [Value Matrix JSON] |
-| `go_to_market_price` | [Price] |
-| `strike_price` | [Price] |
-| `value_floor` | [Price] |
-| `valuation_notes` | [Valuation Notes] |
+| `pricing_title` | "Pricing Summary" |
+
+**Note**: All pricing data (price, NOI, cap rates, value matrix, etc.) is generated from CSV input.
 
 ## 6. Case Studies Section (Auto-generated)
 | Field | Value |
@@ -84,6 +78,6 @@ This example demonstrates the simplified BOV structure focusing only on manual i
 
 ## Summary
 
-**Manual Input Required**: 35 fields
-**Auto-Generated from CSV**: Comparables, Rent Roll, Case Studies data
+**Manual Input Required**: 26 fields
+**Auto-Generated from CSV**: Comparables, Rent Roll, Pricing Summary, Case Studies data
 **Focus**: Section structure, titles, and key configuration fields
