@@ -51,23 +51,48 @@ This document defines the simplified field structure for BOV templates for ADK g
 
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
-| rent_roll_title      | string   | Yes      | Default: "Lease Term & Rental Rates"          | Static        |
+| rent_roll_title      | string   | Yes      | Default: "RENT ROLL"                          | Static        |
 
-**Note**: All lease data (tenant info, dates, amounts, etc.) is generated automatically from CSV input.
+**Note**: All lease data (tenant info, dates, amounts, financial information, value matrix, property specifications, etc.) is generated automatically from CSV input.
 
 ---
 
-## 5. Pricing Summary (Auto-generated from CSV)
+## 5. Investment Highlights Section (Manual Input)
 
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
-| pricing_title        | string   | Yes      | Default: "Pricing Summary"                    | Static        |
+| investment_highlights_title| string| Yes      | Default: "INVESTMENT HIGHLIGHTS"              | Static        |
+| highlight_section_1_title| string| No       | ≤100 chars (e.g., "8+ Years Remaining | Options To Extend | 2% Annual Rent Increases") | Agent/CSV |
+| highlight_section_1_point_1| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_1_point_2| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_2_title| string| No       | ≤100 chars (e.g., "Absolute NNN Lease | Zero Landlord Responsibilities") | Agent/CSV |
+| highlight_section_2_point_1| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_2_point_2| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_3_title| string| No       | ≤100 chars (e.g., "Clark Crossing Shopping Center | Dense Retail Corridor") | Agent/CSV |
+| highlight_section_3_point_1| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_3_point_2| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_4_title| string| No       | ≤100 chars (e.g., "Atlanta Highway / US-78 (27,400 VPD) | Regional Connectivity") | Agent/CSV |
+| highlight_section_4_point_1| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_4_point_2| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_5_title| string| No       | ≤100 chars (e.g., "Strong Demographics") | Agent/CSV |
+| highlight_section_5_point_1| string| No       | ≤300 chars                                    | Agent/CSV     |
+| highlight_section_5_point_2| string| No       | ≤300 chars                                    | Agent/CSV     |
 
-**Note**: All pricing data (price, NOI, cap rates, value matrix, etc.) is generated automatically from CSV input.
+**Note**: This section allows for flexible content creation with up to 5 highlight sections, each with a title and 2 bullet points. All fields are optional to allow for varying content needs.
 
 ---
 
-## 6. Case Studies Section (Auto-generated from CSV)
+## 6. Valuation Section (Auto-generated from CSV)
+
+| Field                | Type     | Required | Validation                                    | Source        |
+|----------------------|----------|----------|-----------------------------------------------|---------------|
+| valuation_title      | string   | Yes      | Default: "VALUATION"                          | Static        |
+
+**Note**: All valuation data (offering, property specifications, sales range, demographics, etc.) is generated automatically from CSV input.
+
+---
+
+## 7. Case Studies Section (Auto-generated from CSV)
 
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
@@ -77,15 +102,15 @@ This document defines the simplified field structure for BOV templates for ADK g
 
 ---
 
-## 7. Broker Biography Section
+## 8. Broker Biography Section
 
-### 7.1 Page Header
+### 8.1 Page Header
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
 | page_title           | string   | Yes      | Default: "BROKER BIOGRAPHY"                   | Static        |
 | company_logo         | image    | Yes      | SRS Capital Markets logo                      | Static        |
 
-### 7.2 Broker Information Fields
+### 8.2 Broker Information Fields
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
 | broker_name          | string   | Yes      | e.g., "FIRST LAST, CREDENTIALS"               | Agent/CSV     |
@@ -96,33 +121,50 @@ This document defines the simplified field structure for BOV templates for ADK g
 | broker_email         | string   | Yes      | Valid email format                            | Agent/CSV     |
 | broker_photo         | image    | Yes      | Professional headshot, JPG/PNG, max 5MB       | Uploaded      |
 
-### 7.3 Experience Section
+### 8.3 Experience Section
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
 | experience_title     | string   | Yes      | Default: "Experience"                         | Static        |
 | experience_text      | text     | Yes      | Professional background paragraph              | Agent/CSV     |
 
-### 7.4 Community/Personal Section
+### 8.4 Community/Personal Section
 | Field                | Type     | Required | Validation                                    | Source        |
 |----------------------|----------|----------|-----------------------------------------------|---------------|
 | community_title      | string   | Yes      | Default: "Community/Personal Information"     | Static        |
 | community_text       | text     | No       | Personal/community information paragraph       | Agent/CSV     |
 
+### 8.5 Education Section
+| Field                | Type     | Required | Validation                                    | Source        |
+|----------------------|----------|----------|-----------------------------------------------|---------------|
+| education_title      | string   | Yes      | Default: "Education"                         | Static        |
+| education_text       | text     | No       | Educational background paragraph               | Agent/CSV     |
+
+### 8.6 Notable Transactions Section
+| Field                | Type     | Required | Validation                                    | Source        |
+|----------------------|----------|----------|-----------------------------------------------|---------------|
+| transactions_title   | string   | Yes      | Default: "Notable Transactions"              | Static        |
+| transaction_1        | string   | No       | ≤200 chars (e.g., "Wawa - Brooklawn, NJ ($8.9M)") | Agent/CSV |
+| transaction_2        | string   | No       | ≤200 chars (e.g., "Stock Plaza Shopping Center - Naples, FL ($26.5M)") | Agent/CSV |
+| transaction_3        | string   | No       | ≤200 chars (e.g., "University Plaza - Vestal, NY ($20M)") | Agent/CSV |
+| transaction_4        | string   | No       | ≤200 chars (e.g., "Associated Medical Professionals of NY - Syracuse, NY ($13.6M)") | Agent/CSV |
+| transaction_5        | string   | No       | ≤200 chars (e.g., "Sherwin Williams Distribution Facility - Effingham, IL ($58.2M)") | Agent/CSV |
+
 ---
 
 ## Summary
 
-**Total Fields**: 26 fields (vs 136 in full version)
+**Total Fields**: 52 fields (vs 136 in full version)
 
 **Auto-generated Sections**:
 - Comparables (from CSV)
 - Rent Roll (from CSV)
-- Pricing Summary (from CSV)
+- Valuation (from CSV)
 - Case Studies (from CSV)
 
 **Manual Input Sections**:
 - Cover Page (8 fields)
 - Table of Contents (9 fields)
-- Broker Biography (9 fields)
+- Investment Highlights (15 fields)
+- Broker Biography (17 fields)
 
-This simplified version focuses on the structural elements that need manual configuration, while data-heavy sections are handled automatically by the ADK system from CSV input.
+This simplified version focuses on the structural elements that need manual configuration, while data-heavy sections are handled automatically by the ADK system from CSV input. The ADK will generate all table content from CSV data based on the section titles provided.

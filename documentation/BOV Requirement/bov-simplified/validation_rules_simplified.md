@@ -21,6 +21,24 @@
 - `toc_background_image`: Required, must be valid JPG/PNG file
 - All page titles and subitems: Static values, no validation needed
 
+### Investment Highlights
+- `investment_highlights_title`: Required, default: "INVESTMENT HIGHLIGHTS"
+- `highlight_section_1_title`: Optional, max 100 chars
+- `highlight_section_1_point_1`: Optional, max 300 chars
+- `highlight_section_1_point_2`: Optional, max 300 chars
+- `highlight_section_2_title`: Optional, max 100 chars
+- `highlight_section_2_point_1`: Optional, max 300 chars
+- `highlight_section_2_point_2`: Optional, max 300 chars
+- `highlight_section_3_title`: Optional, max 100 chars
+- `highlight_section_3_point_1`: Optional, max 300 chars
+- `highlight_section_3_point_2`: Optional, max 300 chars
+- `highlight_section_4_title`: Optional, max 100 chars
+- `highlight_section_4_point_1`: Optional, max 300 chars
+- `highlight_section_4_point_2`: Optional, max 300 chars
+- `highlight_section_5_title`: Optional, max 100 chars
+- `highlight_section_5_point_1`: Optional, max 300 chars
+- `highlight_section_5_point_2`: Optional, max 300 chars
+
 ### Broker Biography
 - `broker_name`: Required, max 100 chars
 - `broker_title`: Required, max 100 chars
@@ -31,6 +49,14 @@
 - `broker_photo`: Required, JPG/PNG file, max 5MB
 - `experience_text`: Required, max 3000 chars
 - `community_text`: Optional, max 1500 chars
+- `education_title`: Required, default: "Education"
+- `education_text`: Optional, max 1500 chars
+- `transactions_title`: Required, default: "Notable Transactions"
+- `transaction_1`: Optional, max 200 chars
+- `transaction_2`: Optional, max 200 chars
+- `transaction_3`: Optional, max 200 chars
+- `transaction_4`: Optional, max 200 chars
+- `transaction_5`: Optional, max 200 chars
 
 ## Auto-Generated Sections (CSV Validation)
 
@@ -53,16 +79,6 @@
 - `annual_rent`: Optional, if provided must match monthly_rent * 12 (±1%)
 - `rent_type`: Required, must be one of {NNN, Gross, Modified}
 
-### Pricing Summary
-- `asking_price`: Optional, must be ≥ 0
-- `net_operating_income`: Optional, must be ≥ 0
-- `cap_rate`: Optional, must be between 0-100
-- `lease_type`: Optional, must be one of {NNN, Gross, Modified}
-- `go_to_market_price`: Optional, must be ≥ 0
-- `strike_price`: Optional, must be ≥ 0
-- `value_floor`: Optional, must be ≥ 0
-- `valuation_notes`: Optional, max 1000 chars
-
 ### Case Studies (from CSV)
 - `case_study_title`: Required, max 100 chars, default: "Case Studies"
 - `case_study_image`: Optional, must be valid JPG/PNG file
@@ -84,13 +100,6 @@
       "field": "broker_phone_direct",
       "value": "713-555-0123",
       "message": "Invalid phone format: '713-555-0123'. Expected format: 'D: XXX.XXX.XXXX'.",
-      "severity": "error"
-    },
-    {
-      "section": "Pricing Summary",
-      "field": "cap_rate",
-      "value": "105",
-      "message": "Value out of range for 'cap_rate': 105. Allowed range: 0–100.",
       "severity": "error"
     }
   ]

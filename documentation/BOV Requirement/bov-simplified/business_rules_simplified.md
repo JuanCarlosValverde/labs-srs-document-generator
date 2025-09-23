@@ -22,7 +22,7 @@
 - **Background Image**: Must be valid JPG/PNG file
 - **Default Values**:
   - page_3_title: "Property Overview"
-  - page_3_subitems: "Comparables | Rent Roll | Pricing Summary"
+  - page_3_subitems: "Comparables | Rent Roll | Investment Highlights"
   - page_5_title: "National Net Lease"
   - page_5_subitems: "Team Overview"
   - page_18_title: "Marketing Strategy"
@@ -41,6 +41,22 @@
   - page_title: "BROKER BIOGRAPHY"
   - experience_title: "Experience"
   - community_title: "Community/Personal Information"
+  - education_title: "Education"
+  - transactions_title: "Notable Transactions"
+
+## Notable Transactions
+- **Content Guidelines**: Each transaction should be concise and highlight key deal metrics and property types.
+- **Character Limits**: Each transaction limited to 200 characters for readability.
+- **Content Focus**: Include property name, location, and transaction value.
+- **Format**: "Property Name - City, State ($Value)" (e.g., "Wawa - Brooklawn, NJ ($8.9M)")
+- **Flexible Structure**: Up to 5 notable transactions, all fields optional.
+
+## Investment Highlights
+- **Content Guidelines**: Each highlight section should have a compelling title and 2 bullet points focusing on key investment benefits.
+- **Character Limits**: Titles limited to 100 characters, bullet points to 300 characters for readability.
+- **Content Focus**: Emphasize tenant strength, lease terms, location advantages, and financial benefits.
+- **Flexible Structure**: Up to 5 highlight sections, each with title and 2 bullet points. All fields optional.
+- **Default Values**: If no highlights provided, use generic investment benefits based on property type.
 
 ## Auto-Generated Sections (from CSV)
 
@@ -58,19 +74,13 @@
 
 ### Rent Roll
 - **Required Fields**: rent_roll_title
-- **Default Title**: "Lease Term & Rental Rates"
+- **Default Title**: "RENT ROLL"
 - **Lease End Dates**: Lease_end may be null/TBD but should be flagged
 - **Rent Calculations**: 
   - If monthly_rent present but annual_rent missing → auto-calculate: `annual_rent = monthly_rent * 12`
   - If both present but mismatch >1% → flag inconsistency
 - **Risk Assessment**: If one tenant occupies >90% of building and lease term remaining <1 year → risk flag
 - **Lease Term Calculation**: `lease_term_remaining = (lease_end - current_date) / 365.25`
-
-### Pricing Summary
-- **Required Fields**: pricing_title
-- **Default Title**: "Pricing Summary"
-- **Auto-Generated**: All pricing data (price, NOI, cap rates, value matrix, etc.) is generated automatically from CSV input
-- **Data Source**: Pricing information comes from client CSV data, no manual calculations required
 
 ### Case Studies
 - **Required Fields**: case_studies_title

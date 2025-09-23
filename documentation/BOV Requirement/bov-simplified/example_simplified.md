@@ -39,25 +39,45 @@ This example demonstrates the simplified BOV structure focusing only on manual i
 ## 4. Rent Roll Section (Auto-generated)
 | Field | Value |
 |-------|-------|
-| `rent_roll_title` | "Lease Term & Rental Rates" |
+| `rent_roll_title` | "RENT ROLL" |
 
 **Note**: All lease data is generated from CSV input.
 
-## 5. Pricing Summary (Auto-generated)
+## 5. Investment Highlights Section (Manual Input)
 | Field | Value |
 |-------|-------|
-| `pricing_title` | "Pricing Summary" |
+| `investment_highlights_title` | "INVESTMENT HIGHLIGHTS" |
+| `highlight_section_1_title` | [Highlight Section 1 Title] |
+| `highlight_section_1_point_1` | [Highlight Section 1 Point 1] |
+| `highlight_section_1_point_2` | [Highlight Section 1 Point 2] |
+| `highlight_section_2_title` | [Highlight Section 2 Title] |
+| `highlight_section_2_point_1` | [Highlight Section 2 Point 1] |
+| `highlight_section_2_point_2` | [Highlight Section 2 Point 2] |
+| `highlight_section_3_title` | [Highlight Section 3 Title] |
+| `highlight_section_3_point_1` | [Highlight Section 3 Point 1] |
+| `highlight_section_3_point_2` | [Highlight Section 3 Point 2] |
+| `highlight_section_4_title` | [Highlight Section 4 Title] |
+| `highlight_section_4_point_1` | [Highlight Section 4 Point 1] |
+| `highlight_section_4_point_2` | [Highlight Section 4 Point 2] |
+| `highlight_section_5_title` | [Highlight Section 5 Title] |
+| `highlight_section_5_point_1` | [Highlight Section 5 Point 1] |
+| `highlight_section_5_point_2` | [Highlight Section 5 Point 2] |
 
-**Note**: All pricing data (price, NOI, cap rates, value matrix, etc.) is generated from CSV input.
+## 6. Valuation Section (Auto-generated)
+| Field | Value |
+|-------|-------|
+| `valuation_title` | "VALUATION" |
 
-## 6. Case Studies Section (Auto-generated)
+**Note**: All valuation data (offering, property specifications, sales range, demographics, etc.) is generated from CSV input.
+
+## 7. Case Studies Section (Auto-generated)
 | Field | Value |
 |-------|-------|
 | `case_studies_title` | "Case Studies" |
 
 **Note**: All case study data is generated from CSV input.
 
-## 7. Broker Biography Section
+## 8. Broker Biography Section
 | Field | Value |
 |-------|-------|
 | `page_title` | "BROKER BIOGRAPHY" |
@@ -73,11 +93,26 @@ This example demonstrates the simplified BOV structure focusing only on manual i
 | `experience_text` | [Experience Description] |
 | `community_title` | "Community/Personal Information" |
 | `community_text` | [Community/Personal Description] |
+| `education_title` | "Education" |
+| `education_text` | [Education Description] |
+| `transactions_title` | "Notable Transactions" |
+| `transaction_1` | [Transaction 1] |
+| `transaction_2` | [Transaction 2] |
+| `transaction_3` | [Transaction 3] |
+| `transaction_4` | [Transaction 4] |
+| `transaction_5` | [Transaction 5] |
 
 ---
 
 ## Summary
 
-**Manual Input Required**: 26 fields
-**Auto-Generated from CSV**: Comparables, Rent Roll, Pricing Summary, Case Studies data
+**Manual Input Required**: 52 fields
+**Auto-Generated from CSV**: Comparables, Rent Roll, Valuation, Case Studies data
 **Focus**: Section structure, titles, and key configuration fields
+
+**Sections Included**:
+- Cover Page (8 fields)
+- Table of Contents (9 fields) 
+- Investment Highlights (15 fields)
+- Broker Biography (17 fields)
+- Notable Transactions (6 fields within Broker Biography)
