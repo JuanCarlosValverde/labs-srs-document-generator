@@ -33,6 +33,7 @@
 # Build locally
 docker build -t srs-document-generator .
 
+
 # Run locally
 docker run -p 8080:8080 srs-document-generator
 
